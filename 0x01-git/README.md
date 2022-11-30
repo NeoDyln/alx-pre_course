@@ -14,6 +14,26 @@ My first readme in this repo
 
 - Finally, when pushing your changes to the online repository, it may ask you to set the origin and if it does this, it most probably will give a suggested command on how to do this. If it doesn't give a suggestion, use this guide: https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories
 
+## Switching to a new branch
+- When you need to create a copy of your current repo to do a test modification, this is where branching comes in
+- We do branching like so
+  ```
+  # For new branches
+  git checkout -b <New branch name>
+
+  # To switch back to an existing branch
+  git checkout <existing branch name>
+  ```
+
+## Merging branches
+- After you've done your edits on the branch repo, you may wish to merge it back to the main repository. We do this using the merge command but before that, you need to know:
+	- If you're merging changes in branch B to branch A, then you need to switch over to branch A. (Check the previous section)
+	- If you want to maintain changes unique to branch B in branch A, check how to do so in the next section
+	```
+	# From the branch in which you want to add new changes, do:
+	git merge branch_with_updates
+	```
+
 ## Merge conflict resolutions
 - Whe trying to merge branches, git may sometimes return an error in cases where files are new in one brach as compared to the origin or alternatively, it may return an error to say that some files have varying content
 - You can check this using 
@@ -34,3 +54,7 @@ My first readme in this repo
 	- Keep the path to the file(s) you want excluded in a new line for each file
 	- For the extensions you want to ignore eg A .pdf file, have a line with ".pdf" included
 	- For files that begin with a particular name, use "filename.*"
+	```
+	#Command to ignore all pdf files
+	*.pdf 
+	```
